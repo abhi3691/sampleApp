@@ -20,7 +20,9 @@ const BottomTabNavigation = () => {
           options={{
             tabBarLabel: 'Home',
             tabBarIcon: ({color}) => {
-              <Ionicons name="home" size={FontRatio(20)} color={color} />;
+              return (
+                <Ionicons name="home" size={FontRatio(20)} color={color} />
+              );
             },
           }}
         />
@@ -30,7 +32,9 @@ const BottomTabNavigation = () => {
           options={{
             tabBarLabel: 'Settings',
             tabBarIcon: ({color}) => {
-              <Ionicons name="home" size={FontRatio(20)} color={color} />;
+              return (
+                <Ionicons name="settings" size={FontRatio(20)} color={color} />
+              );
             },
           }}
         />
