@@ -9,8 +9,11 @@ const App = () => {
   const colorScheme = useColorScheme();
 
   React.useEffect(() => {
-    if (colorScheme === 'dark' && isDark !== true) {
+    if (colorScheme === 'dark' && isDark == false) {
       setIsDark(true);
+    }
+    if (colorScheme === 'light' && isDark == true) {
+      setIsDark(false);
     }
   }, [colorScheme]);
   return (
