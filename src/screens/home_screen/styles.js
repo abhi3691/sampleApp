@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     height: ScreenRatio.height,
     width: ScreenRatio.width,
     padding: 10,
+    alignItems: 'center',
   },
 });
 
