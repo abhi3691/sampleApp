@@ -2,7 +2,7 @@ const Colors = {
   white: '#fff',
   black: '#000',
   lightWihite: '#eee',
-  lightBalck: '#101010',
+  lightBalck: '#474747',
 };
 
 export default Colors;
