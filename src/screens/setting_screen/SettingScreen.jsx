@@ -21,7 +21,12 @@ const SettingScreen = () => {
           style={[styles.text, {color: isDark ? Colors.white : Colors.black}]}>
           Change Theme
         </Text>
-        <Switch value={isDark} onValueChange={() => setIsDark(!isDark)} />
+        <Switch
+          value={isDark}
+          onValueChange={() => setIsDark(!isDark)}
+          trackColor={{true: Colors.black, false: Colors.lightBalck}}
+          thumbColor={isDark ? Colors.white : Colors.white}
+        />
       </View>
     </View>
   );
