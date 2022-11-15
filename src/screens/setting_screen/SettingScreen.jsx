@@ -9,7 +9,6 @@ import Colors from '../../themes/Colors';
 const SettingScreen = () => {
   const setIsDark = useChangeTheme(state => state.setIsDark);
   const isDark = useChangeTheme(state => state.isDark);
-  console.log(isDark);
   return (
     <View
       style={[
