@@ -32,11 +32,18 @@ const Data = [
   },
 ];
 
-const renderItem = ({item}) => {
+const renderItem = ({item}, isDark) => {
   return (
-    <View style={styles.itemCOntainer}>
+    <View
+      style={[
+        styles.itemCOntainer,
+        {backgroundColor: isDark ? Colors.black : Colors.white},
+      ]}>
       <Image source={{uri: item.uri}} style={styles.image} />
-      <Text style={styles.name}>{item.name}</Text>
+      <Text
+        style={[styles.name, {color: isDark ? Colors.white : Colors.black}]}>
+        {item.name}
+      </Text>
     </View>
   );
 };
@@ -51,7 +58,7 @@ const HomeScreen = () => {
         {backgroundColor: isDark ? Colors.lightBalck : Colors.lightWihite},
       ]}>
       <FlatList
-        renderItem={renderItem}
+        renderItem={item => renderItem(item, isDark)}
         numColumns={2}
         data={Data}
         keyExtractor={item => item.id}
