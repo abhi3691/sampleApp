@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './styles';
 import useChangeTheme from '../../zstand/useChangeTheme';
 import Colors from '../../themes/Colors';
+import SingleUserCard from '../../components/organization/single_user_card/SingleUserCard';
 
 const Data = [
   {
@@ -32,22 +33,6 @@ const Data = [
   },
 ];
 
-const renderItem = ({item}, isDark) => {
-  return (
-    <View
-      style={[
-        styles.itemCOntainer,
-        {backgroundColor: isDark ? Colors.black : Colors.white},
-      ]}>
-      <Image source={{uri: item.uri}} style={styles.image} />
-      <Text
-        style={[styles.name, {color: isDark ? Colors.white : Colors.black}]}>
-        {item.name}
-      </Text>
-    </View>
-  );
-};
-
 const HomeScreen = () => {
   const isDark = useChangeTheme(state => state.isDark);
 
@@ -58,7 +43,7 @@ const HomeScreen = () => {
         {backgroundColor: isDark ? Colors.lightBalck : Colors.lightWihite},
       ]}>
       <FlatList
-        renderItem={item => renderItem(item, isDark)}
+        renderItem={item => SingleUserCard(item, isDark)}
         numColumns={2}
         data={Data}
         keyExtractor={item => item.id}
